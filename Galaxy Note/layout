@@ -1,0 +1,182 @@
+parts {
+    portrait {
+        background {
+            image   background_port.png
+        }
+    }
+    landscape {
+        background {
+            image   background_land.png
+        }
+    }
+
+    device {
+        display {
+            width   800
+            height  1280
+            x       0
+            y       0
+        }
+    }
+    
+    controls-hard {
+        background {
+            image   controls-hard.png
+        }
+        buttons {
+            power {
+                    image button.png
+                    x 119
+                    y 0
+            }
+
+            volume-up {
+                    image button.png
+                    x 63
+                    y 0
+            }
+
+            volume-down {
+                    image button.png
+                    x 7
+                    y 0
+            }
+
+
+
+        }
+    }
+
+    controls-soft {
+        background {
+            image   controls-soft.png
+        }
+        buttons {
+            soft-left {
+                    image touch-menu.png
+                    x 0
+                    y 0
+            }
+	    home {
+                    image touch-home.png
+                    x 193
+                    y 0
+            }
+            back {
+                    image touch-back.png
+                    x 495
+                    y 0
+            }
+        }
+    }
+
+    controls-soft-land {
+        background {
+            image   controls-soft-land.png
+        }
+        buttons {
+            soft-left {
+                    image touch-menu-land.png
+                    x 0
+                    y 495
+            }
+	    home {
+                    image touch-home-land.png
+                    x 0
+                    y 197
+            }
+            back {
+                    image touch-back-land.png
+                    x 0
+                    y 0
+            }
+        }
+    }
+}
+
+layouts {
+    portrait {
+        width     1205
+        height    1610
+        color     0xe0e0e0
+        event     EV_SW:0:1
+        
+        part1 {
+            name    portrait
+            x       0
+            y       0
+        }
+
+        part2 {
+            name    landscape
+            x       1700
+            y       0
+        }
+
+        part3 {
+            name    device
+            x       50
+            y       169
+        }
+        part4 {
+            name    controls-hard
+            x       950
+            y       170
+        }
+        part5 {
+            name    controls-soft
+            x       174
+            y       1472
+        }
+
+    }
+
+    landscape {
+        width     1610
+        height    1205
+        color     0xe0e0e0
+        event     EV_SW:0:0
+
+        dpad-rotation 3
+
+        part1 {
+            name    portrait
+            x       0
+            y       1700
+        }
+
+        part2 {
+            name    landscape
+            x       0
+            y       0
+        }
+
+        part3 {
+            name      device
+            x         169
+            y         855
+            rotation  3
+        }
+
+        part4 {
+            name     controls-hard
+            x        170
+            y        950
+        }
+
+	part5 {
+            name     controls-soft-land
+            x        1472
+            y        168
+        }
+    }
+}
+
+keyboard {
+    charmap qwerty2
+}
+
+network {
+    speed  full
+    delay  none
+}
