@@ -1,0 +1,115 @@
+parts {
+   
+   device {
+        display {
+            width   480
+            height  800
+            x       0
+            y       0
+        }
+    }
+    
+    portrait {
+        background {
+            image   background_port.png
+        }
+        buttons {
+			back {
+				image back_port.png
+				x 106
+				y 949
+			}
+			soft-left {
+				image menu_port.png
+				x 229
+				y 949
+			}
+			home {
+				image home_port.png
+				x 350
+				y 949
+			}
+			search {
+				image search_port.png
+				x 472
+				y 949
+			}
+        }
+    }
+    
+    landscape {
+        background {
+            image   background_land.png
+        }
+        
+        buttons {
+			back {
+				image back_land.png
+				x 969
+				y 454
+			}
+			soft-left {
+				image menu_land.png
+				x 969
+				y 331
+			}
+			home {
+				image home_land.png
+				x 969
+				y 210
+			}
+			search {
+				image search_land.png
+				x 969
+				y 88
+			}
+        }
+    }
+    
+}
+
+layouts {
+    portrait {
+        width     640
+        height    1226
+        color     0xffffff
+        event     EV_SW:0:1
+        
+        part1 {
+            name    portrait
+            x       0
+            y       0
+        }
+
+        part2 {
+            name    device
+            x       79
+            y       136
+        }
+    }
+    
+    landscape {
+        width     1221
+        height    645
+        color     0xffffff
+        event     EV_SW:0:0
+        
+        part1 {
+            name    landscape
+            x       0
+            y       0
+        }
+
+        part2 {
+            name    device
+            x       156
+            y       541
+            rotation  3
+        }
+    }
+}
+
+network {
+    speed  full
+    delay  none
+}
