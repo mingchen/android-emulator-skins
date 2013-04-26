@@ -1,0 +1,103 @@
+parts {
+   
+   device {
+        display {
+            width   800
+            height  1280
+            x       0
+            y       0
+        }
+    }
+    
+    portrait {
+        background {
+            image   background_port.png
+        }
+	buttons {
+	power {
+		image   button_vertical.png
+		x	983
+		y	208
+	}
+	volume-up {
+		image   button_vertical.png
+		x	983
+		y	426
+	}
+	volume-down {
+		image   button_vertical.png
+		x	983
+		y	572
+	}
+	}
+    }
+    
+    landscape {
+	background {
+		image   background_land.png
+	}
+	buttons {
+	power {
+		image   button_horizontal.png
+		x	204
+		y	0
+	}
+	volume-up {
+		image   button_horizontal.png
+		x	426
+		y	0
+	}
+	volume-down {
+		image   button_horizontal.png
+		x	572
+		y	0
+	}
+	}
+    }
+}
+
+layouts {
+    portrait {
+        width     1001
+        height    1653
+        color     0xffffff
+        event     EV_SW:0:1
+        
+        part1 {
+            name    portrait
+            x       0
+            y       0
+        }
+
+        part2 {
+            name    device
+            x       96
+            y       182
+        }
+    }
+    
+    landscape {
+        width     1653
+        height    1001
+        color     0xffffff
+        event     EV_SW:0:0
+        
+        part1 {
+            name    landscape
+            x       0
+            y       0
+        }
+
+        part2 {
+            name    device
+            x       250
+            y       922
+            rotation  3
+        }
+    }
+}
+
+network {
+    speed  full
+    delay  none
+}
