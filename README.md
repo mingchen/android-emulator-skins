@@ -14,7 +14,8 @@ Android emulator skins for various of devices.
 
 ## Contributors
 
-* [kedzie](https://github.com/kedzie)
+* [Marek Kedzierski](https://github.com/kedzie)
+* [Nicolas Cornette](https://github.com/ncornette)
 
 Cheers.
 
