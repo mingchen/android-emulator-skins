@@ -97,8 +97,10 @@ BUTTON = Template("""
                 y       ${button_y}
             }""")
 
+class LayerNameError(Exception):
+    pass
+
 def convert_skin_layout(source, destination):
-    layout = None
 
     with open(source, 'r') as f:
         layout = json.loads(f.read())
@@ -108,16 +110,26 @@ def convert_skin_layout(source, destination):
     background = dict(land = layers.pop('background_land.png'), port = layers.pop('background_port.png'))
     screen_land = layers.pop('screen_land.png')
     screen_port = layers.pop('screen_port.png')
+    if layers.has_key('overlay.png'): layers.pop('overlay.png')
     buttons = dict(land = [],port = [])
 
     offset_x = lambda layer,orientation: layer['offsets'][0] - background[orientation]['offsets'][0]
     offset_y = lambda layer,orientation: layer['offsets'][1] - background[orientation]['offsets'][1]
 
     fullname_parser = re.compile('^(.*)_(\w*)\.?.*$')
-    for fullname,value in layers.iteritems():
-        name, orientation = fullname_parser.findall(fullname)[0]
-        orientation = orientation[:4].lower()
-        buttons[orientation].append(BUTTON.substitute({'button_name':name,'orientation':orientation,'button_x':offset_x(value, orientation),'button_y':offset_y(value, orientation)}))
+    for layername,layer in layers.iteritems():
+        try:
+            button_name, orientation = fullname_parser.findall(layername)[0]
+            orientation = orientation[:4].lower()
+            buttons[orientation].append(BUTTON.substitute({'button_name':button_name,'orientation':orientation,'button_x':offset_x(layer, orientation),'button_y':offset_y(layer, orientation)}))
+        except:
+            msg = """Cannot identify button layer with name: 
+"%s" 
+
+Name must be like: "<button_key>_port.png" or "<button_key>_land.png".
+
+Consider also hidding any unrelevant layer.""" % layername
+            raise LayerNameError(msg)
         
     with open(destination, 'w') as f:
 
