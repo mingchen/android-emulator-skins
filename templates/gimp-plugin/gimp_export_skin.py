@@ -98,7 +98,6 @@ BUTTON = Template("""
             }""")
 
 def convert_skin_layout(source, destination):
-    layout = None
 
     with open(source, 'r') as f:
         layout = json.loads(f.read())
@@ -114,10 +113,10 @@ def convert_skin_layout(source, destination):
     offset_y = lambda layer,orientation: layer['offsets'][1] - background[orientation]['offsets'][1]
 
     fullname_parser = re.compile('^(.*)_(\w*)\.?.*$')
-    for fullname,value in layers.iteritems():
-        name, orientation = fullname_parser.findall(fullname)[0]
+    for layername,layer in layers.iteritems():
+        button_name, orientation = fullname_parser.findall(layername)[0]
         orientation = orientation[:4].lower()
-        buttons[orientation].append(BUTTON.substitute({'button_name':name,'orientation':orientation,'button_x':offset_x(value, orientation),'button_y':offset_y(value, orientation)}))
+        buttons[orientation].append(BUTTON.substitute({'button_name':button_name,'orientation':orientation,'button_x':offset_x(layer, orientation),'button_y':offset_y(layer, orientation)}))
         
     with open(destination, 'w') as f:
 
