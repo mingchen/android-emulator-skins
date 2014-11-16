@@ -1,0 +1,97 @@
+{
+  "layers": {
+    "power_land.png": {
+      "width": 236, 
+      "height": 85, 
+      "offsets": [
+        1634, 
+        806
+      ]
+    }, 
+    "background_land.png": {
+      "width": 3309, 
+      "height": 2004, 
+      "offsets": [
+        550, 
+        652
+      ]
+    }, 
+    "volume-up_port.png": {
+      "width": 85, 
+      "height": 252, 
+      "offsets": [
+        2968, 
+        1337
+      ]
+    }, 
+    "volume-down_port.png": {
+      "width": 85, 
+      "height": 252, 
+      "offsets": [
+        2968, 
+        1513
+      ]
+    }, 
+    "overlay.png": {
+      "width": 1440, 
+      "height": 2560, 
+      "offsets": [
+        1488, 
+        356
+      ]
+    }, 
+    "volume-up_land.png": {
+      "width": 252, 
+      "height": 85, 
+      "offsets": [
+        1888, 
+        806
+      ]
+    }, 
+    "background_port.png": {
+      "width": 2004, 
+      "height": 3309, 
+      "offsets": [
+        1203, 
+        0
+      ]
+    }, 
+    "screen_land.png": {
+      "width": 2560, 
+      "height": 1440, 
+      "offsets": [
+        906, 
+        932
+      ]
+    }, 
+    "volume-down_land.png": {
+      "width": 252, 
+      "height": 85, 
+      "offsets": [
+        2064, 
+        806
+      ]
+    }, 
+    "power_port.png": {
+      "width": 85, 
+      "height": 236, 
+      "offsets": [
+        2968, 
+        1083
+      ]
+    }, 
+    "screen_port.png": {
+      "width": 1440, 
+      "height": 2560, 
+      "offsets": [
+        1488, 
+        356
+      ]
+    }
+  }, 
+  "image": {
+    "width": 4412, 
+    "name": "Nexus6.xcf", 
+    "height": 3309
+  }
+}
