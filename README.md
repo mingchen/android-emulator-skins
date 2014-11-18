@@ -12,7 +12,11 @@ Android emulator skins for various of devices.
 
  BSD. See LICENSE.txt
 
-## Contributors
+## Contribution
+
+Welcome to add new skins, feel free to send pull request and share your new skins to others.
+
+## Credits
 
 * [Marek Kedzierski](https://github.com/kedzie)
 * [Nicolas Cornette](https://github.com/ncornette)
