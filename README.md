@@ -1,7 +1,7 @@
-android-emulator-skins
+Android Emulator Skins
 ======================
 
-Android emulator skins for various of devices.
+This is a collection of **Android emulator skins** for various of devices.
 
 ## Usage
 
@@ -10,11 +10,11 @@ Android emulator skins for various of devices.
 
 ## License
 
- BSD. See LICENSE.txt
+ BSD. Feel free to use and distribution. See LICENSE.txt
 
 ## Contribution
 
-Welcome to add new skins, feel free to send pull request and share your new skins to others.
+Welcome to add new skins, feel free to send **pull** request and share your new skins to others.
 
 ## Credits
 
